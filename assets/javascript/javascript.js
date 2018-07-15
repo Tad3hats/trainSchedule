@@ -4,7 +4,7 @@ var config = {
   authDomain: "trainschedule-c1dae.firebaseapp.com",
   databaseURL: "https://trainschedule-c1dae.firebaseio.com",
   projectId: "trainschedule-c1dae",
-  storageBucket: "",
+  storageBucket: "trainschedule-c1dae.appspot.com",
   messagingSenderId: "360209568588"
 };
 
@@ -110,7 +110,7 @@ console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
 // Next Train
 var nextArrival = moment().add(tMinutesTillTrain, "minutes");
-console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
 
   // // Calculate the months worked using hardcore math
   // // To calculate the months worked
@@ -123,7 +123,7 @@ console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
   // Add each train's data into the table
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
-    trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
+    trainFrequency + "</td><td>" + nextArrival + "</td><td>" + tMinutesTillTrain + "</td></tr>");
 });
 
   // Example Time Math
